@@ -66,15 +66,16 @@ def decrypt_value_helper(
 def encrypt_value(value: str, signing_key: str):
     import hashlib
 
-    import nacl.secret
-    import nacl.utils
+    # import nacl.secret
+    # import nacl.utils
 
     # get 32 byte master key #
     hash_object = hashlib.sha256(signing_key.encode())
     hash_bytes = hash_object.digest()
 
     # initialize secret box #
-    box = nacl.secret.SecretBox(hash_bytes)
+    # box = nacl.secret.SecretBox(hash_bytes)
+    box = ''
 
     # encode message #
     value_bytes = value.encode("utf-8")
@@ -87,15 +88,16 @@ def encrypt_value(value: str, signing_key: str):
 def decrypt_value(value: bytes, signing_key: str) -> str:
     import hashlib
 
-    import nacl.secret
-    import nacl.utils
+    # import nacl.secret
+    # import nacl.utils
 
     # get 32 byte master key #
     hash_object = hashlib.sha256(signing_key.encode())
     hash_bytes = hash_object.digest()
 
     # initialize secret box #
-    box = nacl.secret.SecretBox(hash_bytes)
+    # box = nacl.secret.SecretBox(hash_bytes)
+    box = ''
 
     # Convert the bytes object to a string
     plaintext = box.decrypt(value)

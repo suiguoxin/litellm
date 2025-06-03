@@ -137,8 +137,8 @@ class AsyncHTTPHandler:
             custom_ssl_context.set_ciphers(ssl_security_level)
 
             # If ssl_verify is a path to a CA bundle, load it into our custom context
-            if isinstance(ssl_verify, str) and os.path.exists(ssl_verify):
-                custom_ssl_context.load_verify_locations(cafile=ssl_verify)
+            # if isinstance(ssl_verify, str) and os.path.exists(ssl_verify):
+            #     custom_ssl_context.load_verify_locations(cafile=ssl_verify)
 
             # Use our custom SSL context instead of the original ssl_verify value
             ssl_verify = custom_ssl_context

@@ -172,11 +172,6 @@ def get_secret(  # noqa: PLR0915
             with open(azure_federated_token_file, "r") as f:
                 oidc_token = f.read()
                 return oidc_token
-        elif oidc_provider == "file":
-            # Load token from a file
-            with open(oidc_aud, "r") as f:
-                oidc_token = f.read()
-                return oidc_token
         elif oidc_provider == "env":
             # Load token directly from an environment variable
             oidc_token = os.getenv(oidc_aud)
