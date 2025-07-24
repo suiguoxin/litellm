@@ -939,7 +939,7 @@ def load_from_azure_key_vault(use_azure_key_vault: bool = False):
                 "Error when loading keys from Azure Key Vault: AZURE_KEY_VAULT_URI is not set."
             )
 
-        credential = DefaultAzureCredential()
+        credential = DefaultAzureCredential() # CodeQL [SM05139] This is non-production testing code which is not deployed.
 
         # Create the SecretClient using the credential
         client = SecretClient(vault_url=KVUri, credential=credential)
